@@ -49,7 +49,7 @@ interface resultObj {
   allIds: string[];
 }
 
-const normalizeData = (unnormalizedData: unnormalizedData[]) => {
+const normalizeData = (unnormalizedData: unnormalizedData[]): resultObj => {
   const resultObj: resultObj = { byId: {}, allIds: [] };
 
   unnormalizedData.forEach((item) => {
