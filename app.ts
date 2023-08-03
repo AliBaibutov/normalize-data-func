@@ -36,8 +36,21 @@ const posts = [
   },
 ];
 
-const normalizeData = (unnormalizedData) => {
-  const resultObj = { byId: {}, allIds: [] };
+interface unnormalizedData {
+  id: string;
+  title: string;
+  body: string;
+}
+
+interface resultObj {
+  byId: {
+    [key: string]: unnormalizedData;
+  };
+  allIds: string[];
+}
+
+const normalizeData = (unnormalizedData: unnormalizedData[]) => {
+  const resultObj: resultObj = { byId: {}, allIds: [] };
 
   unnormalizedData.forEach((item) => {
     if (!resultObj.byId[item.id]) {
